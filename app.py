@@ -46,12 +46,13 @@ def result():
     if request.method == "POST":
         query = request.form['query']
         image_data = get_image_data(query)
-        print(image_data)
-        write_background_image_css('static/background.css', image_data)
+        write_background_image_css('static/background.css', image_data['image_url'])
         playlist_data = get_playlist_data(query)
         device_id = get_device_id()
         start_playback(playlist_data[1], device_id)
-        return render_template("result.html", query=query, access_token=session["spotify-token"], playlist_url=playlist_data[2], image=playlist_data[0], device_id=device_id)
+        return render_template("result.html", query=query.capitalize(), access_token=session["spotify-token"],
+                               playlist_url=playlist_data[2], image=playlist_data[0], device_id=device_id,
+                               photo_by=image_data['photo_by'], credit_link=image_data['credit_link'])
     elif request.method == "GET":
         return "Wrong HTTP method"
 
@@ -90,10 +91,13 @@ def get_image_data(query):
     request_url= base_url + "/?" + paramstr
     print(request_url)
     response = urllib.request.urlopen(request_url).read().decode('utf-8')
-    pprint.pprint(response)
-    image_url = json.loads(response)[0]['urls']['full']
-    print(image_url)
-    return image_url
+    image_data = json.loads(response)[0]
+    pprint.pprint(image_data)
+    image_info = {'image_url': image_data['urls']['full'],
+                  'photo_by': image_data['user']['name'],
+                  'credit_link': image_data['user']['links']['html']}
+    print(image_info)
+    return image_info
 
 def write_background_image_css(file_path, image_url):
     css_content = f"""

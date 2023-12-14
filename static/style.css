@@ -8,11 +8,13 @@
     color: transparent;
     background-image: linear-gradient(90deg, rgba(153,0,255,1) 33%, rgba(240,5,151,1) 42%, rgba(242,16,131,1) 48%, rgba(255,30,9,1) 54%, rgba(252,176,69,1) 63%);
 }
-.viberesult h2 {
-    margin-left: 10px;
+.viberesult {
+display: inline-block;
+    align: right;
     background-clip: text;
     color: transparent;
-    background-image: linear-gradient(90deg, rgba(153,0,255,1) 3%, rgba(240,5,151,1) 12%, rgba(242,16,131,1) 18%, rgba(255,30,9,1) 24%, rgba(252,176,69,1) 33%);
+    background-image: linear-gradient(90deg, rgba(240,5,151,1) 10%, rgba(242,16,131,1) 25%, rgba(255,30,9,1) 45%, rgba(252,176,69,1) 70%);
+    background-image: linear-gradient(90deg, rgba(240,5,151,1) 5%, rgba(242,16,131,1) 20%, rgba(255,30,9,1) 4%0, rgba(252,176,69,1) 70%);
 }
 .custom-search-bar {
             width: 70%; /* Adjust the width as needed */
@@ -44,21 +46,57 @@
     color: white; /* White placeholder text color */
 }
 
+.result-search-bar {
+display: inline-block;
+margin-left: 100px;
+            width:300%; /* Adjust the width as needed */
+             /* Center the search bar */
+
+        }
+        .result-search-bar input {
+            border-radius: 25px; /* Adjust the border-radius for rounded corners */
+            background-color: #4A00E0;
+            transition: background-color 0.3s ease;
+            color: white; /* Text color */
+            border: 2px solid #4A00E0; /* Default border color */
+            transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+
+        }
+
+.result-search-bar input:hover {
+    background-color: purple; /* Purple background on hover */
+    border: 2px solid #ff00c5;
+}
+
+.result-search-bar input:focus {
+    outline: #ff9600;
+    border: 2px solid #ff9600;
+    color: white;
+    background-color: #fa0488;
+}
+.result-search-bar input::placeholder {
+    color: white; /* White placeholder text color */
+}
+
+
 body {
     background-color: #121212; /* Dark background color */
     color: #ffffff; /* White text color */
 }
 
 .header-banner {
+    display: flex;
     background: linear-gradient(to right, #8E2DE2, #4A00E0); /* Purple gradient background */
-    padding: 7px;
-    text-align: left;
+    padding: 6px;
+    white-space: nowrap;
 }
 
 .brand-text {
     font-size: 24px;
     font-weight: bold;
+    text-align: left;
 }
+
 .container-fluid {
       position: relative;
       height: 100%;
@@ -66,8 +104,8 @@ body {
 
 .playlist-container {
   position: relative;
-  top: 35%;
-  left: 18%;
+  top: 34%;
+  left: 17%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -76,13 +114,14 @@ body {
     margin-top 20px;
     width: 100%;
     max-width: 500px;
+    max-height: 500px;
     border-radius: 12px;
+
 }
 
 .round-button {
     padding: 10px 60px;
-    margin-top: 10px;
-    margin-left: 35px;
+    margin-top: 8px;
     border: none;
     border-radius: 20px;
     background-color: #1DB954; /* Spotify green color */

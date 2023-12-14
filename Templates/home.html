@@ -2,6 +2,11 @@
 {% block tite %}
 VibeMaster Home
 {% endblock %}
+{% block banner %}
+<div class="header-banner brand-text">
+    VibeMaster
+</div>
+{% endblock %}
 {% block content %}
 <div class="vibetitle">
     VibeMaster
@@ -14,10 +19,12 @@ VibeMaster Home
         </div>
     </p>
     <p>
-        <button type="submit" class="vibe-button">Take me to the Vibes</em></button>
-        </>
-    </div>
+        <button type="submit" class="vibe-button">Take me to the Vibes</button>
+
     </p>
 </form>
 </div>
+{% endblock %}
+{% block footer %}
+Playlists from <a href="https://open.spotify.com/">Spotify</a> and Photos from <a href="https://unsplash.com/">Unplash</a>
 {% endblock %}
