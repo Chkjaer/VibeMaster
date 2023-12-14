@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+Results
+{% endblock %}
+{% block content %}
+<div class="viberesult"> <h2>Here is <i>{{ query }} vibes </i> </h2> </div>
+<div class="container-fluid background">
+<div class="playlist-container">
+  <img src="{{ image }}" class='music-image' alt="Playlist Image">
+  <br>
+  <a href="{{ playlist_url }}" target="_blank">
+    <button class="round-button">Take me to the Tunes!</button>
+  </a>
+</div>
+</div>
+
+{% endblock %}
